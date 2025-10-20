@@ -189,7 +189,7 @@ a:focus {
 
 .grid__item {
 	position: relative;
-	opacity: 0.4,
+	opacity: 0.4;
 }
 
 .grid--img .grid__item {
