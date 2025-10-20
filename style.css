@@ -238,9 +238,11 @@ a:focus {
 	grid-area: 17 / 32 / 32 / 38;
 }
 
-.pos-6 {
-	grid-area: 20 / 46 / 28 / 51;
+/* Fix: đẩy ảnh #6 vào trong, giữ nguyên kích thước (8 hàng x 5 cột) */
+.pos-6 { 
+  grid-area: 18 / 41 / 26 / 46; /* lên 2 hàng, sang trái 5 cột */
 }
+
 
 .pos-7 {
 	grid-area: 43 / 1 / 51 / 10;
