@@ -387,3 +387,38 @@ a:focus {
 	text-align: center;
 	z-index: 2000;
 }
+/* === CĂN GIỮA & KHÔNG XUỐNG DÒNG RIÊNG CHO A1K25-QH2 === */
+
+/* Lớp chứa chữ phủ toàn bộ vùng content để căn giữa tuyệt đối */
+.title-layer {
+  position: absolute;   /* bám theo .content (đang position: relative) */
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;   /* căn giữa dọc */
+  text-align: center;
+  z-index: 2000;             /* cao hơn ảnh (ảnh đang z-index:100) */
+  pointer-events: none;      /* không chặn hover ảnh */
+  gap: 0.25em;
+}
+
+/* Gỡ các thuộc tính position tuyệt đối nếu có ở .content__title */
+.title-layer .content__title {
+  position: static !important;
+  transform: none !important;
+  margin: 0.15em 0 !important;
+}
+
+/* Chỉ ép dòng TIÊU ĐỀ ĐẦU TIÊN (A1K25-QH2) không xuống dòng */
+.title-layer .content__title:first-of-type span {
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: keep-all; /* tránh ngắt ở dấu gạch nối */
+}
+
+/* Tuỳ chọn: kích cỡ chữ co giãn hợp lý theo màn hình */
+.title-layer .content__title {
+  font-size: clamp(48px, 10vw, 120px);
+}
+
